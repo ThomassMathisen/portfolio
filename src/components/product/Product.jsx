@@ -1,9 +1,13 @@
 import "./product.css"
+import { ThemeContext } from "../../context";
+import { useContext } from "react";
 
 const Product = ({ img, link }) =>   {
+  const theme = useContext(ThemeContext)
+  const darkMode = theme.state.darkMode
   return (
     <div className="p">
-      <div className="p-browser">
+      <div style={{ backgroundColor: darkMode && "#333"}} className="p-browser">
         <div className="p-circle1"></div>
         <div className="p-circle2"></div>
         <div className="p-circle3"></div>
